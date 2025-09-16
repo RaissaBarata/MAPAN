@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAPAN - Proteção Animal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <img class="logo" src="/imagens/logo.jpg" alt="Logo MAPAN" />
+        <button class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
+        <nav class="nav-menu">
+          <a href="#sobre">Sobre Nós</a> <a href="#adote">Adote</a>
+          <a href="#como-ajudar">Como Ajudar</a>
+          <a href="#transparencia">Transparência</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <!-- Botão WhatsApp -->
+        <a
+          href="https://wa.me/5511999999999"
+          class="btn-whatsapp"
+          target="_blank"
+        >
+          <img src="/imagens/whatsapp.png" alt="WhatsApp" />
+          <span>Fale com a gente</span>
+        </a>
+      </div>
+    </header>
+    <!-- Hero / Banner -->
+
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero__content">
+        <h1>Protegendo quem não pode falar</h1>
+        <p>
+          Nosso compromisso é dar amor e cuidado a cada animal abandonado,
+          garantindo que encontrem famílias que os acolham de coração aberto.
+        </p>
+
+        <div class="hero__buttons">
+          <a href="#adote" class="btn"
+            ><img src="/imagens/patinhasblack.svg" alt="" /> Adote</a
+          >
+          <a href="#como-ajudar" class="btn-alt">Como Ajudar</a>
+        </div>
+      </div>
+
+      <!-- Onda -->
+      <div class="hero__wave">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 150"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#ffffff"
+            d="M0,64L80,85.3C160,107,320,149,480,144C640,139,800,85,960,69.3C1120,53,1280,75,1360,85.3L1440,96L1440,160L0,160Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre container">
+      <div class="sobre-content">
+        <div class="sobre-text">
+          <h1><span class="drop-Q">Q</span>uem Somos</h1>
+          <p>
+            A MAPAN é uma organização não governamental localizada em Santos,
+            dedicada ao resgate, cuidado e proteção de cães e gatos que vivem
+            nas ruas. Nosso trabalho vai muito além do simples abrigo: cada
+            animal que chega até nós recebe atenção, carinho, cuidados médicos e
+            socialização, preparando-o para encontrar um lar amoroso e seguro.
+            Nosso propósito é oferecer uma segunda chance a cada vida,
+            acreditando que todos os animais merecem amor, cuidado e dignidade.
+            <br />
+            Ao longo dos anos, já ajudamos mais de 10.000 animais a encontrarem
+            famílias, e seguimos firmes na missão de conscientizar a comunidade
+            sobre a importância da adoção responsável, da castração e da
+            proteção animal.
+          </p>
+        </div>
+        <div class="sobre-img">
+          <img src="/imagens/cachorrinho1.jpg" alt="Resgate animal" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosso Propósito -->
+    <section id="proposito" class="proposito container">
+      <div class="proposito-header">
+        <h3 class="tag">Nosso Propósito</h3>
+        <h2 class="titulo">Adoção consciente e cuidado com quem não tem voz</h2>
+        <p class="descricao">
+          Cada ação que realizamos tem como objetivo transformar a vida de
+          animais abandonados, oferecendo amor, cuidado e oportunidades para um
+          futuro melhor.
+        </p>
+      </div>
+      <div class="proposito-cards">
+        <div class="card">
+          <h3>💖 Amor e cuidado</h3>
+          <p>
+            Garantimos que cada animal receba atenção, carinho e cuidados
+            médicos.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🏠 Adoção responsável</h3>
+          <p>
+            Conectamos animais a famílias que possam oferecer lares amorosos e
+            seguros.
+          </p>
+        </div>
+        <div class="card">
+          <h3>📢 Conscientização</h3>
+          <p>
+            Educamos a comunidade sobre a importância da proteção animal e
+            adoção responsável.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Adote -->
+    <section id="adote" class="adote container">
+      <h2>Adote um Amigo</h2>
+      <div class="galeria-adote">
+        <div class="pet-card">
+          <img src="pet1.jpg" alt="Pet 1" />
+          <h3>Pet 1</h3>
+          <p>Idade, porte e descrição breve.</p>
+        </div>
+        <div class="pet-card">
+          <img src="pet2.jpg" alt="Pet 2" />
+          <h3>Pet 2</h3>
+          <p>Idade, porte e descrição breve.</p>
+        </div>
+        <!-- adicione mais pet-cards -->
+      </div>
+    </section>
+    <!-- Como Ajudar -->
+    <section id="como-ajudar" class="ajudar container">
+      <h2>Como Você Pode Ajudar</h2>
+      <div class="ajudar__cards">
+        <div class="card">
+          <h3>Doar Ração</h3>
+          <p>Contribua com alimentos para nossos peludos.</p>
+        </div>
+        <div class="card">
+          <h3>Voluntariado</h3>
+          <p>Ajude em resgates, cuidados ou divulgação.</p>
+        </div>
+        <div class="card">
+          <h3>Doação Financeira</h3>
+          <p>Qualquer valor faz diferença.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="depoimentos container">
+      <h2>Depoimentos</h2>
+      <div class="depo-card">
+        <p>"Adotei um amor da MAPAN, e minha vida mudou!"</p>
+        <span>- Nome da Pessoa</span>
+      </div>
+      <div class="depo-card">
+        <p>
+          "Graças à MAPAN, meu companheiro recebeu cuidados que jamais
+          imaginei."
+        </p>
+        <span>- Outra Pessoa</span>
+      </div>
+    </section>
+    <!-- Contato -->
+    <section id="contato" class="contato container">
+      <h2>Contato</h2>
+      <p>Email: contato@mapan.org</p>
+      <p>WhatsApp: (13) 9XXXX-XXXX</p>
+      <p>Instagram: <a href="#">@mapan_oficial</a></p>
+    </section>
+    <footer class="footer">
+      <div class="footer__content container">
+        <div class="footer__info">
+          <h3>MAPAN</h3>
+          <p>
+            Resgatando, cuidando e promovendo adoções para cães e gatos
+            abandonados.
+          </p>
+        </div>
+        <div class="footer__links">
+          <a href="#sobre">Sobre Nós</a> <a href="#adote">Adote</a>
+          <a href="#como-ajudar">Como Ajudar</a> <a href="#contato">Contato</a>
+        </div>
+      </div>
+      <div class="footer__credit"><p>© 2025 MAPAN</p></div>
+    </footer>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("sticky-bg");
+        } else {
+          navbar.classList.remove("sticky-bg");
+        }
+      });
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
