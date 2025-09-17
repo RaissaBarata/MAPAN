@@ -130,55 +130,108 @@
       </div>
     </section>
     <!-- Adote -->
-    <section id="adote" class="adote container">
-      <h2>Adote um Amigo</h2>
-      <div class="galeria-adote">
-        <div class="pet-card">
-          <img src="pet1.jpg" alt="Pet 1" />
-          <h3>Pet 1</h3>
-          <p>Idade, porte e descrição breve.</p>
+    <section class="adocao container">
+      <div class="adocao-content">
+        <div class="adocao-texto">
+          <span class="adocao-tag">Esperando por você</span>
+          <h2>
+            Transforme o dia de um <strong>pet resgatado</strong> em um final
+            feliz
+          </h2>
+          <p>
+            Cada um dos nossos bichinhos tem uma história única e está pronto
+            para fazer parte da sua família. Adotar é dar uma segunda chance e
+            receber amor em dobro. 💛
+          </p>
+          <a href="#adote" class="btn-adocao"><span>Quero adotar</span></a>
         </div>
-        <div class="pet-card">
-          <img src="pet2.jpg" alt="Pet 2" />
-          <h3>Pet 2</h3>
-          <p>Idade, porte e descrição breve.</p>
-        </div>
-        <!-- adicione mais pet-cards -->
-      </div>
-    </section>
-    <!-- Como Ajudar -->
-    <section id="como-ajudar" class="ajudar container">
-      <h2>Como Você Pode Ajudar</h2>
-      <div class="ajudar__cards">
-        <div class="card">
-          <h3>Doar Ração</h3>
-          <p>Contribua com alimentos para nossos peludos.</p>
-        </div>
-        <div class="card">
-          <h3>Voluntariado</h3>
-          <p>Ajude em resgates, cuidados ou divulgação.</p>
-        </div>
-        <div class="card">
-          <h3>Doação Financeira</h3>
-          <p>Qualquer valor faz diferença.</p>
+        <div class="adocao-imagem">
+          <img
+            src="/imagens/cachorro-adocao.png"
+            alt="Cachorrinho esperando adoção"
+          />
         </div>
       </div>
     </section>
-    <!-- Depoimentos -->
-    <section id="depoimentos" class="depoimentos container">
-      <h2>Depoimentos</h2>
-      <div class="depo-card">
-        <p>"Adotei um amor da MAPAN, e minha vida mudou!"</p>
-        <span>- Nome da Pessoa</span>
-      </div>
-      <div class="depo-card">
+
+    <section class="ajude">
+      <div class="container">
+        <h2>SOS MAPAN</h2>
         <p>
-          "Graças à MAPAN, meu companheiro recebeu cuidados que jamais
-          imaginei."
+          A ONG MAPAN precisa de sua ajuda! Estamos enfrentando dificuldades e
+          sem ração suficiente para alimentar mais de <strong>68 cães</strong> e
+          <strong>35 gatos</strong>. Cada contribuição faz diferença e ajuda a
+          salvar vidas.
         </p>
-        <span>- Outra Pessoa</span>
+
+        <div class="ajude-cards">
+          <div class="card">
+            <strong>Doando ração</strong>
+            <p>
+              Ajude nossos animais a terem alimento diário. Qualquer quantidade
+              já é uma grande ajuda!
+            </p>
+          </div>
+          <div class="card">
+            <strong>Doando medicamentos</strong>
+            <p>
+              Medicamentos e suprimentos veterinários são essenciais para cuidar
+              da saúde dos nossos pets.
+            </p>
+          </div>
+          <div class="card">
+            <strong>Comprando e compartilhando rifas</strong>
+            <p>
+              Participe das nossas rifas ou compartilhe com amigos para ajudar a
+              arrecadar fundos.
+            </p>
+          </div>
+          <div class="card">
+            <strong>Doando qualquer valor</strong>
+            <p>
+              Faça uma doação direta para ajudar com despesas gerais da ONG.
+              Toda ajuda é bem-vinda!
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <strong>PIX:</strong> ongmapanpix@gmail.com <br />
+          <strong>CNPJ:</strong> 07.012.405/0001-99
+        </p>
       </div>
     </section>
+
+    <!-- Seção Formulário com Polaroids e doodles -->
+    <section class="formulario container">
+      <div class="formulario-content">
+        <!-- Lado esquerdo: Formulário -->
+        <div class="formulario-left">
+          <h2>Entre em contato</h2>
+          <p>Preencha o formulário abaixo e venha conhecer nossos bichinhos!</p>
+          <form>
+            <input type="text" placeholder="Nome" required />
+            <input type="email" placeholder="E-mail" required />
+            <textarea placeholder="Mensagem" rows="4" required></textarea>
+            <button type="submit" class="btn-adocao">Enviar</button>
+          </form>
+        </div>
+
+        <!-- Lado direito: Polaroids -->
+        <div class="formulario-right">
+          <div class="polaroid">
+            <img src="/imagens/pet1.jpg" alt="Bichinho 1" />
+          </div>
+          <div class="polaroid">
+            <img src="/imagens/pet2.jpg" alt="Bichinho 2" />
+          </div>
+          <div class="polaroid">
+            <img src="/imagens/pet3.jpg" alt="Bichinho 3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contato -->
     <section id="contato" class="contato container">
       <h2>Contato</h2>
@@ -215,6 +268,37 @@
       });
       navToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
+      });
+
+      const track = document.querySelector(".depoimentos-track");
+      const prevBtn = document.querySelector(".slider-btn.prev");
+      const nextBtn = document.querySelector(".slider-btn.next");
+
+      let index = 0;
+
+      const updateSlider = () => {
+        const cardWidth = track.children[0].offsetWidth + 16; // 16px = gap
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+      };
+
+      nextBtn.addEventListener("click", () => {
+        if (index < track.children.length - 1) {
+          index++;
+          updateSlider();
+        } else {
+          index = 0; // volta ao início
+          updateSlider();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (index > 0) {
+          index--;
+          updateSlider();
+        } else {
+          index = track.children.length - 1; // vai pro último
+          updateSlider();
+        }
       });
     </script>
   </body>

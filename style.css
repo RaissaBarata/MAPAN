@@ -4,7 +4,7 @@
   --azul-claro: #a8caecff;
   --cinza-claro: #f4f6fa;
   --branco: #ffffff;
-  --amarelo-destaque: #fde68a;
+  --amarelo-destaque: #f5e8cb;
   --texto-principal: #1f2937;
   --texto-claro: #ffffff;
   --radius: 12px;
@@ -152,8 +152,9 @@ body {
 
 .hero__buttons .btn,
 .hero__buttons .btn-alt {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.8rem 2rem;
   font-size: 1rem;
@@ -325,66 +326,188 @@ section {
   margin: 0 auto 3rem;
   line-height: 1.5;
   color: var(--texto-principal);
-} /* Cards */
+}
+
+/* Cards */
 .proposito-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
+
 .proposito-cards .card {
-  background: var(--cinza-claro);
+  background: var(--azul-claro);
   padding: 2rem 1.5rem;
   border-radius: var(--radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .proposito-cards .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: var(--amarelo-destaque);
 }
+
 .proposito-cards .card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: var(--amarelo-destaque);
+  color: var(--texto-principal);
 }
+
 .proposito-cards .card p {
   font-size: 1rem;
   color: var(--texto-principal);
   line-height: 1.4;
 }
-.adote {
-  background: var(--azul-escuro);
-  color: var(--texto-claro);
-}
-.galeria-adote {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-.pet-card {
-  background: var(--texto-claro);
+/* --- Seção Adoção --- */
+.adocao {
+  background: var(--amarelo-destaque);
   border-radius: var(--radius);
-  overflow: hidden;
-  transition: var(--transicao);
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative; /* necessário para posicionar a imagem fora */
 }
-.pet-card img {
-  width: 100%;
-  height: auto;
-  display: block;
+
+.adocao-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-.pet-card h3 {
-  padding: 1rem;
-  font-size: 1.2rem;
+
+.adocao-texto {
+  flex: 1 1 280px;
+  min-width: 280px;
 }
-.pet-card p {
-  padding: 0 1rem 1rem;
-  font-size: 1rem;
+
+.adocao-tag::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("/imagens/pata.png") no-repeat center;
+  background-size: contain;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.adocao-tag {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--texto-principal);
+  background: var(--cinza-claro);
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.adocao h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
   color: var(--texto-principal);
 }
-.pet-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+.adocao h2 span {
+  color: var(--azul-medio);
 }
+
+.adocao p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--texto-principal);
+  max-width: 500px;
+}
+
+.btn-adocao {
+  background: var(--azul-claro);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-adocao span {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+
+  transition: none;
+}
+
+.btn-adocao:hover {
+  transform: scale(1.05);
+}
+
+.adocao-imagem {
+  flex: 1 1 280px;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.adocao-imagem img {
+  position: absolute;
+  top: -300px;
+  right: 0;
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+  .adocao-imagem img {
+    top: -60px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adocao-content {
+    flex-direction: column; /* texto em cima, imagem abaixo */
+    align-items: center;
+  }
+
+  .adocao-imagem img {
+    position: relative; /* volta para fluxo normal em telas pequenas */
+    top: -30px; /* ainda sobe um pouco */
+    max-width: 80%;
+  }
+
+  .adocao-texto p,
+  .adocao-texto h2 {
+    text-align: center;
+  }
+
+  .btn-adocao {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .adocao h2 {
+    font-size: 1.5rem;
+  }
+
+  .adocao p {
+    font-size: 1rem;
+  }
+}
+
 .ajudar {
   background: #ffffff;
 }
@@ -404,27 +527,315 @@ section {
 .card:hover {
   background: var(--azul-escuro);
 }
-.depoimentos {
-  background: var(--cinza-claro);
-}
-.depo-card {
-  max-width: 700px;
-  margin: 1rem auto;
-  background: var(--texto-claro);
-  padding: 2rem;
+
+/* --- Seção Ajude --- */
+.ajude {
+  position: relative;
+  background: #ffe6e6; /* tom suave de destaque */
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
   border-radius: var(--radius);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 5rem 0;
 }
-.depo-card p {
+
+.ajude::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.svgrepo.com/show/101633/dog-paw.svg");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.ajude::after {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/6/63/Paw_print_icon.svg")
+    no-repeat center;
+  background-size: 50px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ajude .container {
+  position: relative;
+  z-index: 1; /* mantém o conteúdo acima das patinhas */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ajude h2 {
+  font-size: 2.8rem;
+  color: #d32f2f;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.ajude p {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
-.depo-card span {
+
+.ajude-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.ajude-cards .card {
+  background: #ffffff;
+  flex: 1 1 220px; /* largura menor e responsiva */
+  max-width: 240px;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ajude-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ajude-cards .card strong {
   display: block;
-  text-align: right;
-  font-weight: 600;
-  color: var(--azul-medio);
-} /* Contato */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #d32f2f;
+}
+
+.ajude-cards .card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.ajude p strong {
+  color: #d32f2f;
+}
+
+/* Botões */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--azul-medio);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  background: var(--azul-escuro);
+}
+
+.slider-btn.prev {
+  left: 0;
+}
+
+.slider-btn.next {
+  right: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .depo-card {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .depo-card {
+    min-width: 90%;
+  }
+}
+
+/* --- Seção Formulário --- */
+.formulario {
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+}
+
+.formulario-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* --- Lado esquerdo: Formulário --- */
+.formulario-left {
+  flex: 1 1 280px;
+  min-width: 280px;
+}
+
+.formulario-left h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--texto-principal);
+}
+
+.formulario-left p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--texto-principal);
+  max-width: 500px;
+}
+
+.formulario-left form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-left input,
+.formulario-left textarea {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+}
+
+.formulario-left button {
+  background: var(--azul-claro);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.formulario-left button:hover {
+  background: var(--azul-medio);
+  transform: scale(1.05);
+}
+
+/* --- Lado direito: Polaroids --- */
+.formulario-right {
+  flex: 1 1 280px;
+  min-width: 280px;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.polaroid {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  transform: rotate(-5deg);
+  transition: transform 0.3s;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Ctext x='0' y='15' font-size='15'%3E%F0%9F%90%BE%3C/text%3E%3Ctext x='25' y='35' font-size='15'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 50px;
+  background-position: center;
+}
+
+/* Fundo desenhado */
+.polaroid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/imagens/patinha-doodle.png"); /* imagem transparente com patinhas e corações */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.3; /* deixa discreto atrás da foto */
+  pointer-events: none; /* não atrapalha clique */
+}
+
+.polaroid:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.polaroid:nth-child(3) {
+  transform: rotate(-8deg);
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Hover divertido */
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+  .polaroid {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .formulario-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .polaroid {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-left h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .formulario-left p {
+    text-align: center;
+  }
+
+  .formulario-left form input,
+  .formulario-left form textarea,
+  .formulario-left form button {
+    width: 100%;
+  }
+
+  .polaroid {
+    width: 120px;
+  }
+}
+
+/* Contato */
 .contato {
   background: var(--azul-escuro);
   color: var(--texto-claro);
@@ -450,7 +861,7 @@ section {
 .footer__credit {
   margin-top: 1rem;
   font-size: 0.9rem;
-} /* Responsividade */
+}
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -473,6 +884,17 @@ section {
     color: var(--texto-claro);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  .btn-whatsapp {
+    display: none;
+  }
+
+  .nav-menu .btn-whatsapp {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: center;
+  }
+
   .hero h1 {
     font-size: 2.2rem;
   }
