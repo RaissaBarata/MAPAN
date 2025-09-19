@@ -19,7 +19,7 @@
         <nav class="nav-menu">
           <a href="#sobre">Sobre Nós</a> <a href="#adote">Adote</a>
           <a href="#como-ajudar">Como Ajudar</a>
-          <a href="#transparencia">Transparência</a>
+
           <a href="#contato">Contato</a>
         </nav>
         <!-- Botão WhatsApp -->
@@ -130,7 +130,7 @@
       </div>
     </section>
     <!-- Adote -->
-    <section class="adocao container">
+    <section id="adote" class="adocao container">
       <div class="adocao-content">
         <div class="adocao-texto">
           <span class="adocao-tag">Esperando por você</span>
@@ -154,7 +154,7 @@
       </div>
     </section>
 
-    <section class="ajude">
+    <section id="como-ajudar" class="ajude">
       <div class="container">
         <h2>SOS MAPAN</h2>
         <p>
@@ -202,59 +202,120 @@
       </div>
     </section>
 
-    <!-- Seção Formulário com Polaroids e doodles -->
-    <section class="formulario container">
-      <div class="formulario-content">
-        <!-- Lado esquerdo: Formulário -->
-        <div class="formulario-left">
-          <h2>Entre em contato</h2>
-          <p>Preencha o formulário abaixo e venha conhecer nossos bichinhos!</p>
-          <form>
-            <input type="text" placeholder="Nome" required />
-            <input type="email" placeholder="E-mail" required />
-            <textarea placeholder="Mensagem" rows="4" required></textarea>
-            <button type="submit" class="btn-adocao">Enviar</button>
-          </form>
+    <!-- Seção QR Code com Polaroids -->
+    <section class="qr-code container">
+      <div class="qr-code-content">
+        <!-- Lado esquerdo: Texto + QR Code -->
+        <div class="qr-code-left">
+          <h2>DOAÇÃO MAPAN</h2>
+          <p>
+            Você pode ajudar doando ração, medicamentos, comprando e
+            compartilhando nossas rifas ou fazendo uma doação via Pix.
+          </p>
+
+          <div class="qr-code-pix">
+            <!-- QR Code -->
+            <div class="qr-code-img">
+              <img
+                src="/imagens/qrcode-pix.png"
+                alt="QR Code para doação via Pix"
+              />
+              <p>Escaneie para doar</p>
+            </div>
+          </div>
         </div>
 
         <!-- Lado direito: Polaroids -->
-        <div class="formulario-right">
+        <div class="qr-code-right">
           <div class="polaroid">
-            <img src="/imagens/pet1.jpg" alt="Bichinho 1" />
+            <img src="/imagens/pet1.jpg" alt="Cachorrinho fofo" />
           </div>
           <div class="polaroid">
-            <img src="/imagens/pet2.jpg" alt="Bichinho 2" />
+            <img src="/imagens/pet2.jpg" alt="Gatinho brincando" />
           </div>
           <div class="polaroid">
-            <img src="/imagens/pet3.jpg" alt="Bichinho 3" />
+            <img src="/imagens/pet3.jpg" alt="Cachorrinho feliz" />
+          </div>
+          <div class="polaroid">
+            <img src="/imagens/pet4.jpg" alt="Outro pet" />
+          </div>
+          <div class="polaroid">
+            <img src="/imagens/pet5.jpg" alt="Mais um pet" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contato container">
-      <h2>Contato</h2>
-      <p>Email: contato@mapan.org</p>
-      <p>WhatsApp: (13) 9XXXX-XXXX</p>
-      <p>Instagram: <a href="#">@mapan_oficial</a></p>
+    <!-- Galeria de Fotos -->
+    <section id="galeria" class="galeria container">
+      <h2>Nosso Resgate em Fotos</h2>
+      <p>
+        Confira alguns dos momentos especiais de resgate e adoção de nossos pets
+        ❤️
+      </p>
+
+      <div class="slider">
+        <button class="slider-btn prev" aria-label="Slide anterior">
+          &#10094;
+        </button>
+        <div class="slider-track">
+          <div class="slide">
+            <img src="/imagens/facebook1.jpg" alt="Pet 1" />
+          </div>
+          <div class="slide">
+            <img src="/imagens/facebook2.jpg" alt="Pet 2" />
+          </div>
+          <div class="slide">
+            <img src="/imagens/facebook3.jpg" alt="Pet 3" />
+          </div>
+          <div class="slide">
+            <img src="/imagens/facebook4.jpg" alt="Pet 4" />
+          </div>
+          <div class="slide">
+            <img src="/imagens/facebook5.jpg" alt="Pet 5" />
+          </div>
+          <div class="slide">
+            <img src="/imagens/facebook6.jpg" alt="Pet 6" />
+          </div>
+          <div class="slide">
+            <img src="/imagens/facebook7.jpg" alt="Pet 7" />
+          </div>
+        </div>
+        <button class="slider-btn next" aria-label="Próximo slide">
+          &#10095;
+        </button>
+      </div>
     </section>
-    <footer class="footer">
-      <div class="footer__content container">
-        <div class="footer__info">
+
+    <footer class="footer-novo">
+      <div class="footer-container">
+        <!-- Mascote -->
+        <div class="footer-logo">
+          <img src="/imagens/logo.jpg" alt="Mascote fofo" />
           <h3>MAPAN</h3>
+          <p>Dê um lar, ganhe um amigo. ❤️</p>
+        </div>
+
+        <!-- Contatos -->
+        <div class="footer-contato">
+          <h4>Fale Conosco</h4>
+          <p>📞 <a href="tel:+5513999999999">(13) 9XXXX-XXXX</a></p>
+          <p>✉️ <a href="mailto:contato@mapan.org">contato@mapan.org</a></p>
           <p>
-            Resgatando, cuidando e promovendo adoções para cães e gatos
-            abandonados.
+            📷
+            <a href="https://instagram.com/mapan_oficial" target="_blank"
+              >@mapan_oficial</a
+            >
           </p>
         </div>
-        <div class="footer__links">
-          <a href="#sobre">Sobre Nós</a> <a href="#adote">Adote</a>
-          <a href="#como-ajudar">Como Ajudar</a> <a href="#contato">Contato</a>
+
+        <!-- Ícone da pata -->
+        <div class="footer-pata">
+          <img src="/imagens/pata-amarela.png" alt="Pata rosa" />
         </div>
       </div>
-      <div class="footer__credit"><p>© 2025 MAPAN</p></div>
     </footer>
+
     <script>
       const navToggle = document.querySelector(".nav-toggle");
       const navMenu = document.querySelector(".nav-menu");
@@ -270,35 +331,68 @@
         navMenu.classList.toggle("active");
       });
 
-      const track = document.querySelector(".depoimentos-track");
-      const prevBtn = document.querySelector(".slider-btn.prev");
-      const nextBtn = document.querySelector(".slider-btn.next");
+      const slider = document.querySelector(".slider");
+      const sliderTrack = document.querySelector(".slider-track");
+      const slides = document.querySelectorAll(".slide");
+      const btnPrev = document.querySelector(".slider-btn.prev");
+      const btnNext = document.querySelector(".slider-btn.next");
 
-      let index = 0;
+      let slideWidth = slides[0].offsetWidth + 16; // largura do slide + gap
+      let currentIndex = 0;
 
+      // Clona os slides para criar loop infinito
+      slides.forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        sliderTrack.appendChild(clone);
+      });
+
+      // Atualiza a posição do slider
       const updateSlider = () => {
-        const cardWidth = track.children[0].offsetWidth + 16; // 16px = gap
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+        sliderTrack.style.transition = "transform 0.5s ease";
+        sliderTrack.style.transform = `translateX(-${
+          currentIndex * slideWidth
+        }px)`;
       };
 
-      nextBtn.addEventListener("click", () => {
-        if (index < track.children.length - 1) {
-          index++;
-          updateSlider();
+      // Próximo slide
+      btnNext.addEventListener("click", () => {
+        currentIndex++;
+        updateSlider();
+
+        // Quando chegar ao final do clone
+        if (currentIndex >= slides.length) {
+          setTimeout(() => {
+            sliderTrack.style.transition = "none"; // remove animação
+            currentIndex = 0;
+            sliderTrack.style.transform = `translateX(0px)`;
+          }, 500); // tempo da transição
+        }
+      });
+
+      // Slide anterior
+      btnPrev.addEventListener("click", () => {
+        if (currentIndex === 0) {
+          // Vai pro clone no final
+          sliderTrack.style.transition = "none";
+          currentIndex = slides.length;
+          sliderTrack.style.transform = `translateX(-${
+            currentIndex * slideWidth
+          }px)`;
+          setTimeout(() => {
+            sliderTrack.style.transition = "transform 0.5s ease";
+            currentIndex--;
+            updateSlider();
+          }, 20);
         } else {
-          index = 0; // volta ao início
+          currentIndex--;
           updateSlider();
         }
       });
 
-      prevBtn.addEventListener("click", () => {
-        if (index > 0) {
-          index--;
-          updateSlider();
-        } else {
-          index = track.children.length - 1; // vai pro último
-          updateSlider();
-        }
+      // Atualiza largura ao redimensionar
+      window.addEventListener("resize", () => {
+        slideWidth = slides[0].offsetWidth + 16;
+        updateSlider();
       });
     </script>
   </body>
